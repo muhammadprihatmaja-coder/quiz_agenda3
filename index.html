@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Interaktif Smart & Manajemen ASN</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .progress-bar {
+            transition: width 0.4s ease;
+        }
+        .timer-bar {
+            transition: width 0.1s linear;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+        .animate-shake {
+            animation: shake 0.2s ease-in-out 2;
+        }
+        .animate-spin-slow {
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white shadow-lg py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-500 p-2 rounded-lg text-blue-950 font-bold text-xl tracking-wider shadow-inner">
+                    ASN
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg leading-tight">Aparatur Sipil Negara</h1>
+                    <p class="text-xs text-blue-200">Portal Kuis Interaktif & Smart Learning</p>
+                </div>
+            </div>
+            <div class="hidden sm:flex items-center space-x-2 text-xs bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>BerAKHLAK & Bangga Melayani Bangsa</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8">
+        
+        <!-- DASHBOARD / HOME SCREEN -->
+        <section id="screen-home" class="space-y-8 animate-fade-in">
+            <!-- Jumbotron Banner -->
+            <div class="bg-gradient-to-br from-indigo-800 via-blue-800 to-indigo-950 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+                    <svg width="300" height="300" viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="40" />
+                    </svg>
+                </div>
+                <div class="relative z-10 max-w-xl">
+                    <span class="bg-amber-400 text-slate-950 font-bold text-xs uppercase px-3 py-1 rounded-full shadow-sm">
+                        Edisi Terbaru 2026
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black mt-4 tracking-tight leading-tight">
+                        Siap Menjadi <span class="text-amber-400">Smart ASN</span> Unggul & Profesional?
+                    </h2>
+                    <p class="text-indigo-100 mt-3 text-sm sm:text-base">
+                        Uji pemahaman Anda tentang konsep Manajemen ASN (Sistem Merit, Regulasi) dan pilar-pilar Smart ASN (Digital Literacy, Wawasan Global, Integritas).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quiz Category Selection -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    Pilih Paket Kuis Anda
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Quiz 1 -->
+                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-indigo-300 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-lg">Kuis Campuran</h4>
+                            <p class="text-slate-500 text-xs mt-2 line-clamp-3">Ujian komprehensif yang mengombinasikan regulasi dasar Manajemen ASN serta visi utama Smart ASN 2045.</p>
+                        </div>
+                        <div class="mt-6">
+                            <span class="text-xs font-semibold text-slate-400 block mb-3">10 Pertanyaan • Beragam</span>
+                            <button onclick="selectQuiz('campuran')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm py-2.5 px-4 rounded-xl transition-colors shadow-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz 2 -->
+                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-lg">Smart ASN</h4>
+                            <p class="text-slate-500 text-xs mt-2 line-clamp-3">Uji wawasan Anda mengenai literasi digital, penguasaan bahasa asing, jejaring global, hospitality, dan etika teknologi.</p>
+                        </div>
+                        <div class="mt-6">
+                            <span class="text-xs font-semibold text-slate-400 block mb-3">10 Pertanyaan • Literasi Digital</span>
+                            <button onclick="selectQuiz('smart_asn')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm py-2.5 px-4 rounded-xl transition-colors shadow-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz 3 -->
+                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-amber-300 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11V4.707L5.5 8.207M13 21a11.97 11.97 0 007.412-2.385M15 11c0-2.854-.83-5.382-2.244-7.402z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-lg">Manajemen ASN</h4>
+                            <p class="text-slate-500 text-xs mt-2 line-clamp-3">Spesifik membahas dasar hukum, sistem merit, jenjang karir, SKP, disiplin PNS, serta kode etik birokrasi.</p>
+                        </div>
+                        <div class="mt-6">
+                            <span class="text-xs font-semibold text-slate-400 block mb-3">10 Pertanyaan • Regulasi & Merit</span>
+                            <button onclick="selectQuiz('manajemen_asn')" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm py-2.5 px-4 rounded-xl transition-colors shadow-sm">
+                                Mulai Kuis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Configuration & Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                <!-- Settings Card -->
+                <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                    <h4 class="font-bold text-slate-800 text-base mb-4 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Konfigurasi Game
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                            <div>
+                                <label class="font-semibold text-sm text-slate-700 block">Mode Waktu (Timer)</label>
+                                <span class="text-xs text-slate-400">Batasi 20 detik per soal agar lebih menantang.</span>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="toggle-timer" checked class="sr-only peer">
+                                <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                            <div>
+                                <label class="font-semibold text-sm text-slate-700 block">Efek Animasi & Suara</label>
+                                <span class="text-xs text-slate-400">Tampilkan hiasan visual saat menjawab benar/salah.</span>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="toggle-animations" checked class="sr-only peer">
+                                <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard & History Combined Tabs Card -->
+                <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex flex-col justify-between min-h-[300px]">
+                    <div>
+                        <!-- Tab Selector -->
+                        <div class="flex border-b border-slate-200 mb-4">
+                            <button id="tab-global" onclick="switchHomeTab('global')" class="flex-1 pb-3 text-center border-b-2 border-indigo-600 font-bold text-sm text-indigo-600 transition-all flex items-center justify-center space-x-1.5">
+                                <span>🏆 Peringkat Global</span>
+                            </button>
+                            <button id="tab-local" onclick="switchHomeTab('local')" class="flex-1 pb-3 text-center border-b-2 border-transparent font-medium text-sm text-slate-400 hover:text-slate-600 transition-all flex items-center justify-center space-x-1.5">
+                                <span>🕒 Riwayat Anda</span>
+                            </button>
+                        </div>
+
+                        <!-- Global Leaderboard Content Panel -->
+                        <div id="panel-global" class="space-y-2.5 max-h-[200px] overflow-y-auto pr-1">
+                            <div id="global-loading" class="text-center py-8 text-slate-400 text-sm space-y-2">
+                                <svg class="w-6 h-6 animate-spin mx-auto text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 15H19"></path></svg>
+                                <p>Mengambil data peringkat dari awan...</p>
+                            </div>
+                            <div id="global-empty" class="hidden text-center py-8 text-slate-400 text-sm">
+                                <p>Belum ada yang mengunggah skor. Jadilah yang pertama!</p>
+                            </div>
+                            <div id="global-list" class="space-y-2"></div>
+                        </div>
+
+                        <!-- Local History Content Panel -->
+                        <div id="panel-local" class="hidden space-y-2.5 max-h-[200px] overflow-y-auto pr-1">
+                            <div id="stats-placeholder" class="text-center py-8 text-slate-400 text-sm">
+                                <p>Belum ada riwayat kuis lokal. Selesaikan satu kuis untuk mulai!</p>
+                            </div>
+                            <div id="stats-list" class="space-y-2"></div>
+                        </div>
+                    </div>
+
+                    <div id="reset-stats-btn-container" class="hidden pt-4 border-t border-slate-100">
+                        <button onclick="clearHistory()" class="text-xs text-red-500 hover:text-red-700 font-semibold transition-colors flex items-center">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            Hapus Riwayat Skor Lokal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ INTERFACE SCREEN -->
+        <section id="screen-quiz" class="hidden space-y-6 animate-fade-in">
+            <!-- Header Panel -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex items-center space-x-3 w-full sm:w-auto">
+                    <button onclick="showQuitConfirmation()" class="text-slate-400 hover:text-slate-600 p-1.5 hover:bg-slate-100 rounded-lg transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </button>
+                    <div>
+                        <span id="quiz-title-badge" class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-full">Kategori</span>
+                        <h4 id="quiz-current-num" class="font-extrabold text-slate-800 text-sm mt-1">Soal 0 dari 0</h4>
+                    </div>
+                </div>
+                <!-- Progress & Timer area -->
+                <div class="flex items-center space-x-6 w-full sm:w-auto justify-end">
+                    <!-- Score Tracker -->
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-medium">Skor Saat Ini</span>
+                        <span id="quiz-current-score" class="font-bold text-slate-800 text-base">00</span>
+                    </div>
+                    <!-- Circular or Boxed Timer -->
+                    <div id="quiz-timer-container" class="flex items-center space-x-2 bg-amber-50 text-amber-800 border border-amber-200 px-3.5 py-1.5 rounded-xl">
+                        <svg class="w-4 h-4 animate-spin-slow text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span id="quiz-timer-txt" class="font-bold text-sm tracking-wider">20s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Progress Bar -->
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                <div id="quiz-progress-fill" class="progress-bar bg-gradient-to-r from-blue-600 to-indigo-600 h-full w-0"></div>
+            </div>
+            <!-- Dynamic Linear Timer Line (only visible when timer is on) -->
+            <div id="quiz-timer-line-container" class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                <div id="quiz-timer-line" class="timer-bar bg-amber-400 h-full w-full"></div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+                <h3 id="question-text" class="text-lg sm:text-xl font-bold text-slate-800 leading-relaxed">
+                    Sedang memuat pertanyaan...
+                </h3>
+            </div>
+
+            <!-- Options Grid -->
+            <div id="options-container" class="grid grid-cols-1 gap-4">
+                <!-- Dynamically populated buttons -->
+            </div>
+
+            <!-- Navigation Actions -->
+            <div class="flex justify-end pt-2">
+                <button id="next-btn" disabled onclick="handleNextQuestion()" class="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3.5 px-8 rounded-2xl transition-all shadow-md hover:shadow-lg flex items-center space-x-2">
+                    <span>Berikutnya</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- RESULT SCREEN -->
+        <section id="screen-result" class="hidden space-y-8 animate-fade-in">
+            <!-- Jumbotron Result Score card -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm text-center max-w-2xl mx-auto space-y-6">
+                <h3 class="text-2xl font-black text-slate-800">Ujian Selesai!</h3>
+                
+                <!-- Circular Score Indicator -->
+                <div class="relative w-36 h-36 mx-auto flex items-center justify-center">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                        <path class="text-slate-100" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path id="result-svg-circle" class="text-indigo-600" stroke-dasharray="0, 100" stroke-linecap="round" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <div class="absolute text-center">
+                        <span id="result-score-txt" class="block text-4xl font-extrabold text-indigo-900">0</span>
+                        <span class="text-[10px] tracking-widest text-slate-400 font-bold uppercase">Skor Akhir</span>
+                    </div>
+                </div>
+
+                <!-- Score Feedback and Details -->
+                <div class="space-y-2">
+                    <h4 id="result-status-title" class="text-lg font-bold text-slate-800">Menilai Kerja Keras Anda...</h4>
+                    <p id="result-status-desc" class="text-sm text-slate-500 max-w-md mx-auto">
+                        Menganalisis hasil pengerjaan kuis ASN Anda.
+                    </p>
+                </div>
+
+                <!-- Stats Badges -->
+                <div class="grid grid-cols-2 gap-4 max-w-md mx-auto pt-2">
+                    <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-2xl">
+                        <span class="text-[11px] uppercase font-bold text-slate-400 tracking-wider">Benar</span>
+                        <p id="result-stat-correct" class="text-xl font-bold text-slate-800 mt-1">0/0</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-2xl">
+                        <span class="text-[11px] uppercase font-bold text-slate-400 tracking-wider">Waktu Pengerjaan</span>
+                        <p id="result-stat-time" class="text-xl font-bold text-slate-800 mt-1">0s</p>
+                    </div>
+                </div>
+
+                <!-- Action Button Cluster -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
+                    <button onclick="changeScreen('home')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 px-6 rounded-2xl transition-all text-sm flex items-center justify-center space-x-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Menu Utama</span>
+                    </button>
+                    <button id="btn-restart-quiz" onclick="restartCurrentQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-8 rounded-2xl transition-all text-sm flex items-center justify-center space-x-2 shadow-md">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 15H19"></path></svg>
+                        <span>Ulangi Kuis</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- GLOBAL LEADERBOARD REGISTER FORM -->
+            <div id="leaderboard-submission-card" class="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-100 rounded-3xl p-6 sm:p-8 shadow-sm text-center max-w-2xl mx-auto space-y-4">
+                <div class="mx-auto w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11V4.707L5.5 8.207M13 21a11.97 11.97 0 007.412-2.385M15 11c0-2.854-.83-5.382-2.244-7.402z"></path></svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800">Daftarkan Skor ke Peringkat Global</h4>
+                    <p class="text-xs text-slate-500 mt-1">Masukkan nama panggilan Anda untuk bersaing dengan rekan ASN lain secara online.</p>
+                </div>
+                <div class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="leaderboard-nickname-input" placeholder="Nama Panggilan (Maks 15 Karakter)" maxlength="15" class="flex-grow px-4 py-3 rounded-xl border border-indigo-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-800 text-sm shadow-sm">
+                    <button id="submit-leaderboard-btn" onclick="submitGlobalScore()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-sm">
+                        Kirim Skor
+                    </button>
+                </div>
+            </div>
+
+            <!-- CERTIFICATE GENERATOR CARD (Only visible if score >= 80) -->
+            <div id="certificate-generator-card" class="hidden bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8 shadow-md text-center max-w-2xl mx-auto space-y-6">
+                <div class="mx-auto w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-amber-900">Selamat! Anda Berhak Mendapat Sertifikat</h4>
+                    <p class="text-xs text-amber-700 mt-1">Anda menyelesaikan kuis dengan predikat luar biasa (skor &ge; 80%). Tulis nama Anda di bawah untuk mengklaim.</p>
+                </div>
+                <div class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="cert-user-name" placeholder="Masukkan nama lengkap Anda..." class="flex-grow px-4 py-3 rounded-xl border border-amber-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-slate-800 text-sm shadow-sm">
+                    <button onclick="generateCertificate()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-sm">
+                        Buat Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- DETAILED REVIEW ACCORDION -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+                <h4 class="font-bold text-slate-800 text-lg mb-6 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    Review & Pembahasan Jawaban
+                </h4>
+                <div id="review-list" class="space-y-4">
+                    <!-- Dynamic review questions list here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATE PREVIEW MODAL / PRINT PAGE -->
+        <section id="screen-certificate" class="hidden animate-fade-in py-6 space-y-6">
+            <div class="flex justify-between items-center bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <button onclick="closeCertificateView()" class="text-slate-500 hover:text-slate-700 font-bold text-sm flex items-center space-x-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    <span>Kembali ke Hasil</span>
+                </button>
+                <div class="space-x-2">
+                    <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs sm:text-sm shadow-sm flex items-center inline-flex space-x-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        <span>Cetak / Simpan PDF</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Printable Certificate Canvas/Design -->
+            <div id="certificate-print-area" class="bg-white border-8 border-double border-amber-600 p-8 sm:p-16 rounded-lg shadow-xl text-center max-w-4xl mx-auto relative overflow-hidden aspect-[1.414/1] flex flex-col justify-between">
+                <!-- Background visual ornaments -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-stone-50 via-white to-amber-50/10 pointer-events-none"></div>
+                <div class="absolute -top-16 -left-16 w-40 h-40 border border-amber-200 rounded-full opacity-40"></div>
+                <div class="absolute -bottom-16 -right-16 w-40 h-40 border border-amber-200 rounded-full opacity-40"></div>
+                
+                <!-- Cert Header -->
+                <div class="relative z-10 space-y-4">
+                    <div class="flex justify-center items-center space-x-2">
+                        <div class="w-2.5 h-2.5 bg-amber-500 rounded-full"></div>
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400">Sertifikat Kelulusan</span>
+                        <div class="w-2.5 h-2.5 bg-amber-500 rounded-full"></div>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-bold text-amber-900 tracking-tight">Kuis Pintar Smart & Manajemen ASN</h2>
+                    <div class="w-32 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto"></div>
+                </div>
+
+                <!-- Cert Body -->
+                <div class="relative z-10 my-6 space-y-4">
+                    <p class="text-xs sm:text-sm text-stone-500 italic">Diberikan secara terhormat kepada:</p>
+                    <h3 id="cert-output-name" class="text-xl sm:text-3xl font-extrabold text-slate-900 border-b border-stone-200 max-w-xl mx-auto pb-2 capitalize tracking-wide font-sans">
+                        Nama Lengkap Anda
+                    </h3>
+                    <p class="text-xs sm:text-sm text-stone-600 max-w-lg mx-auto leading-relaxed">
+                        Atas kelulusan gemilang pada evaluasi kompetensi mandiri ASN dengan hasil predikat yang sangat baik. Menunjukkan pemahaman yang mumpuni dalam hal regulasi birokrasi, sistem merit, serta pilar-pilar kecakapan digital Smart ASN 2045.
+                    </p>
+                </div>
+
+                <!-- Cert Footer -->
+                <div class="relative z-10 flex flex-row justify-between items-end pt-6 border-t border-stone-100">
+                    <div class="text-left">
+                        <span class="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Kategori Evaluasi</span>
+                        <span id="cert-output-category" class="text-xs font-bold text-slate-700">Kuis Campuran</span>
+                    </div>
+                    <!-- Decorative Emblem -->
+                    <div class="hidden sm:flex flex-col items-center">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full border-4 border-amber-200 flex items-center justify-center text-amber-600 shadow-sm">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                        </div>
+                        <span class="text-[8px] font-extrabold uppercase text-amber-700 tracking-widest mt-1">LULUS</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Skor Kompetensi</span>
+                        <span id="cert-output-score" class="text-xs font-black text-indigo-700">Skor: 100/100</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Dialog (Quit / Alert Confirmation) -->
+    <div id="modal-quit" class="hidden fixed inset-0 z-50 bg-slate-900/60 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 shadow-xl max-w-sm w-full space-y-4 border border-slate-100 animate-scale-up">
+            <h4 class="text-lg font-bold text-slate-800">Keluar Kuis?</h4>
+            <p class="text-sm text-slate-500">Anda sedang dalam progres pengerjaan kuis. Nilai kuis yang sedang berjalan akan hilang jika Anda memutuskan kembali ke menu utama.</p>
+            <div class="flex space-x-3 pt-2">
+                <button onclick="closeQuitModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-2.5 rounded-xl text-sm transition-all">
+                    Batal
+                </button>
+                <button onclick="quitQuiz()" class="w-1/2 bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-xl text-sm transition-all shadow-sm">
+                    Keluar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Toast Notification (Custom alert) -->
+    <div id="toast-notif" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm w-full bg-slate-900 text-white p-4 rounded-2xl shadow-xl flex items-center space-x-3">
+        <div class="bg-amber-500 text-slate-950 p-1.5 rounded-lg" id="toast-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div class="flex-grow">
+            <p id="toast-msg" class="text-sm font-medium">Ini adalah pesan pemberitahuan</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-6 px-6 text-center text-xs">
+        <div class="max-w-5xl mx-auto space-y-2">
+            <p>&copy; 2026 Kuis Mandiri Pegawai ASN. Dioptimalisasi untuk Pembelajaran Interaktif.</p>
+            <p class="text-slate-600">Sistem Merit • Pengawasan Komisi ASN • Kompetensi Literasi Digital & Integritas Pelayanan</p>
+        </div>
+    </footer>
+
+    <!-- Firebase Imports and Config Modules -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase Configuration Parsing with Fallback Environment values
+        let db = null;
+        let auth = null;
+        let firebaseEnabled = false;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'kuis-asn-prod';
+
+        try {
+            if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                const firebaseConfig = JSON.parse(__firebase_config);
+                const app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+                firebaseEnabled = true;
+            }
+        } catch (err) {
+            console.warn("Koneksi Firebase Cloud dinonaktifkan. Mode simulasi lokal berjalan.", err);
+        }
+
+        // Database Kuis dari Prompt User
+        const QUIZ_DATA = {
+            campuran: {
+                title: "Kuis Campuran (Manajemen & Smart ASN)",
+                questions: [
+                    {
+                        question: "Dasar hukum yang mengatur manajemen ASN di Indonesia adalah…",
+                        options: [
+                            "UU No. 25 Tahun 2009",
+                            "UU No. 5 Tahun 2014",
+                            "PP No. 11 Tahun 2017",
+                            "PP No. 53 Tahun 2010"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Berdasarkan rilis awal reformasi birokrasi, Undang-Undang No. 5 Tahun 2014 merupakan payung regulasi utama mengenai Aparatur Sipil Negara (ASN) di Indonesia."
+                    },
+                    {
+                        question: "Manajemen ASN meliputi pengelolaan yang berbasis pada…",
+                        options: [
+                            "Sistem merit",
+                            "Nepotisme",
+                            "Politik praktis",
+                            "Penunjukan langsung"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Manajemen ASN harus berlandaskan sistem merit yang adil, transparan, objektif, dan proporsional tanpa pengaruh kepentingan politik atau unsur subjektivitas."
+                    },
+                    {
+                        question: "Prinsip sistem merit dalam manajemen ASN adalah…",
+                        options: [
+                            "Penempatan berdasarkan senioritas",
+                            "Penempatan berdasarkan kualifikasi, kompetensi, dan kinerja",
+                            "Penempatan berdasarkan rekomendasi atasan",
+                            "Penempatan berdasarkan asal daerah"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Sistem merit menjamin penempatan pegawai diatur berdasarkan kompetensi, kualifikasi profesional, serta kinerja nyata tanpa memandang perbedaan latar belakang non-prestasi."
+                    },
+                    {
+                        question: "Smart ASN adalah ASN yang…",
+                        options: [
+                            "Cepat, fleksibel, dan mudah diarahkan",
+                            "Memiliki kompetensi global, menguasai teknologi, dan berintegritas tinggi",
+                            "Selalu mengikuti perintah tanpa berpikir",
+                            "Memiliki gelar akademik tinggi"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Smart ASN bercirikan profil ASN berwawasan global, menguasai teknologi informasi, menguasai bahasa asing, memiliki jiwa keramahtamahan (hospitality), networking tinggi, enterpreneurship, serta berintegritas."
+                    },
+                    {
+                        question: "Salah satu kompetensi utama yang harus dimiliki Smart ASN adalah…",
+                        options: [
+                            "Digital literacy",
+                            "Keterampilan melobi politik",
+                            "Kemampuan monopoli layanan",
+                            "Keterampilan mengatur harga pasar"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Digital Literacy (literasi digital) adalah kemampuan mutlak bagi Smart ASN untuk merespons transformasi digital secara bijak, produktif, dan aman dalam tugas pelayanan."
+                    },
+                    {
+                        question: "Smart ASN berorientasi pada visi…",
+                        options: [
+                            "Indonesia Emas 2045",
+                            "Reformasi politik",
+                            "Kemandirian partai",
+                            "Otonomi kampus"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Smart ASN dicanangkan guna menyiapkan pondasi sumber daya manusia aparatur kelas dunia demi menyongsong visi besar kemerdekaan ke-100 tahun: Indonesia Emas 2045."
+                    },
+                    {
+                        question: "Dalam manajemen kinerja ASN, indikator kinerja utama (IKU) digunakan untuk…",
+                        options: [
+                            "Menilai loyalitas pribadi",
+                            "Mengukur capaian sasaran organisasi dan individu",
+                            "Mengatur jumlah cuti pegawai",
+                            "Menentukan pangkat berdasarkan usia"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Indikator Kinerja Utama (IKU) dirancang sebagai tolok ukur objektif guna memantau sekaligus mengukur pencapaian target kerja unit kerja (organisasi) dan individu pegawai."
+                    },
+                    {
+                        question: "Salah satu tantangan penerapan Smart ASN adalah…",
+                        options: [
+                            "Perubahan teknologi yang cepat",
+                            "Banyaknya hari libur",
+                            "Terbatasnya sumber daya air",
+                            "Perbedaan zona waktu"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Akselerasi teknologi digital yang dinamis menuntut setiap aparatur melakukan reskilling dan upskilling secara terus-menerus agar tidak tertinggal."
+                    },
+                    {
+                        question: "Contoh penerapan Smart ASN di tempat kerja adalah…",
+                        options: [
+                            "Menggunakan aplikasi digital untuk mempercepat pelayanan publik",
+                            "Mengandalkan prosedur manual meski ada sistem digital",
+                            "Menghindari penggunaan media sosial untuk edukasi publik",
+                            "Fokus pada pekerjaan tanpa melibatkan inovasi"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Smart ASN senantiasa memanfaatkan platform teknologi modern secara inovatif demi menyederhanakan birokrasi, mempercepat layanan, dan meningkatkan kepuasan masyarakat."
+                    },
+                    {
+                        question: "Jika ingin menjadi Smart ASN, seorang pegawai perlu…",
+                        options: [
+                            "Mengembangkan literasi teknologi, kemampuan bahasa asing, dan jejaring global",
+                            "Fokus hanya pada tugas rutinitas",
+                            "Mengikuti perintah tanpa inovasi",
+                            "Mengutamakan hubungan pribadi di atas aturan"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Penguasaan aspek hard skill seperti IT, bahasa internasional, serta soft skill berupa kolaborasi global, mutlak diperlukan untuk membangun kapasitas Smart ASN."
+                    }
+                ]
+            },
+            smart_asn: {
+                title: "Kuis Smart ASN",
+                questions: [
+                    {
+                        question: "Smart ASN berorientasi pada visi…",
+                        options: [
+                            "Indonesia Emas 2045",
+                            "Otonomi Daerah 2025",
+                            "Reformasi Politik 2030",
+                            "Pemilu Serentak 2024"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Guna merealisasikan Indonesia Emas 2045, aparatur sipil disiapkan dengan penguasaan teknologi tingkat global agar mampu bersaing secara internasional."
+                    },
+                    {
+                        question: "Salah satu kompetensi utama Smart ASN adalah…",
+                        options: [
+                            "Digital literacy",
+                            "Lobi politik",
+                            "Manajemen konflik partai",
+                            "Pemasaran"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Kemampuan literasi teknologi dan informasi (Digital Literacy) merupakan fondasi utama pilar kecakapan Smart ASN era digital."
+                    },
+                    {
+                        question: "Smart ASN harus memiliki kemampuan berpikir…",
+                        options: [
+                            "Analitis dan inovatif",
+                            "Dogmatis",
+                            "Statis",
+                            "Pasif"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Cara berpikir yang analitis didukung ide-ide inovatif akan melahirkan perbaikan kualitas layanan publik dan memecahkan problematika kemasyarakatan yang kompleks."
+                    },
+                    {
+                        question: "Kompetensi bahasa asing dalam Smart ASN bertujuan untuk…",
+                        options: [
+                            "Membaca dokumen asing",
+                            "Memperluas jejaring internasional dan wawasan global",
+                            "Menjadi penerjemah resmi",
+                            "Mengajar bahasa asing"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Menguasai bahasa internasional utama memungkinkan ASN untuk berkolaborasi dengan pihak global dan mengadopsi best-practice dunia."
+                    },
+                    {
+                        question: "Salah satu ciri Smart ASN adalah terbiasa bekerja dengan…",
+                        options: [
+                            "Prosedur digital dan kolaborasi online",
+                            "Surat manual dan tatap muka",
+                            "Hanya tatap muka",
+                            "Tanpa teknologi"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Efektivitas pengerjaan tugas dicapai lewat sistem paperless, otomasi alur kerja digital, serta kolaborasi tanpa batasan ruang fisik."
+                    },
+                    {
+                        question: "Dalam konsep Smart ASN, jejaring global berarti…",
+                        options: [
+                            "Hanya mengenal rekan dalam negeri",
+                            "Membangun koneksi lintas negara untuk kolaborasi",
+                            "Memiliki teman dari satu wilayah",
+                            "Menggunakan media sosial untuk hiburan"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Jejaring global memfasilitasi pertukaran informasi strategis berskala internasional untuk mendukung pembangunan nasional."
+                    },
+                    {
+                        question: "Smart ASN harus berperan sebagai…",
+                        options: [
+                            "Inovator dan pelayan publik profesional",
+                            "Pemimpin partai",
+                            "Investor swasta",
+                            "Pengamat politik"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Aparatur berkewajiban menyalurkan ide kreatif dan melayani seluruh lapisan masyarakat secara adil, inklusif, dan prima."
+                    },
+                    {
+                        question: "Untuk menjadi Smart ASN, pegawai perlu meningkatkan…",
+                        options: [
+                            "Literasi teknologi dan literasi data",
+                            "Kemampuan menghafal prosedur saja",
+                            "Senioritas di lingkungan kerja",
+                            "Hubungan politik"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Kecerdasan mengolah data secara akurat dan menggunakan teknologi secara bijak memperkuat proses pengambilan keputusan berbasis bukti (evidence-based policy)."
+                    },
+                    {
+                        question: "Smart ASN memiliki komitmen kuat pada…",
+                        options: [
+                            "Integritas dan pelayanan publik berkualitas",
+                            "Kepentingan kelompok tertentu",
+                            "Tujuan politik jangka pendek",
+                            "Keuntungan pribadi"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Integritas moral dan komitmen terhadap standar mutu tinggi dalam melayani merupakan janji luhur pengabdian korps ASN."
+                    },
+                    {
+                        question: "Penguasaan teknologi oleh Smart ASN berguna untuk…",
+                        options: [
+                            "Mempercepat, mempermudah, dan meningkatkan kualitas layanan publik",
+                            "Menggantikan semua SDM",
+                            "Mengurangi interaksi publik",
+                            "Menghindari transparansi"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Teknologi hadir bukan sebagai penghalang, melainkan sebagai akselerator agar pelayanan publik menjadi jauh lebih hemat, transparan, dan menjangkau semua orang."
+                    }
+                ]
+            },
+            manajemen_asn: {
+                title: "Kuis Manajemen ASN",
+                questions: [
+                    {
+                        question: "Dasar hukum manajemen ASN di Indonesia adalah…",
+                        options: [
+                            "UU No. 25 Tahun 2009",
+                            "UU No. 5 Tahun 2014",
+                            "PP No. 53 Tahun 2010",
+                            "UU No. 30 Tahun 2014"
+                        ],
+                        answerIndex: 1, // b
+                        explanation: "Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara mendefinisikan ketentuan pokok pilar manajemen kepegawaian nasional."
+                    },
+                    {
+                        question: "Sistem merit berarti…",
+                        options: [
+                            "Penempatan pegawai berdasarkan kualifikasi, kompetensi, dan kinerja",
+                            "Penempatan pegawai berdasarkan asal daerah",
+                            "Penempatan pegawai berdasarkan rekomendasi politik",
+                            "Penempatan pegawai berdasarkan senioritas"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Melalui sistem merit, proses promosi, demosi, rekrutmen, dan mutasi murni berlandaskan keahlian teknis serta performa kerja tanpa diskriminasi."
+                    },
+                    {
+                        question: "Salah satu fungsi manajemen ASN adalah…",
+                        options: [
+                            "Manajemen kinerja",
+                            "Manajemen saham",
+                            "Manajemen dagang",
+                            "Manajemen logistik"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Manajemen kinerja merancang sasaran kerja, mengawasi capaian progres, mengevaluasi berkala, serta mengapresiasi keberhasilan pegawai."
+                    },
+                    {
+                        question: "Manajemen ASN bertujuan untuk…",
+                        options: [
+                            "Meningkatkan profesionalisme dan kinerja ASN",
+                            "Mengurangi jumlah ASN",
+                            "Mengubah sistem politik",
+                            "Menentukan harga barang"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Tujuan mutlak manajemen ASN adalah mewujudkan birokrasi berkinerja tinggi yang responsif, netral, profesional, berintegritas, serta berdaya saing global."
+                    },
+                    {
+                        question: "Dalam manajemen kinerja ASN, SKP digunakan untuk…",
+                        options: [
+                            "Mengukur pencapaian kerja individu",
+                            "Mengatur cuti tahunan",
+                            "Menentukan gaji pokok",
+                            "Mengatur tunjangan transportasi"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Sasaran Kinerja Pegawai (SKP) berisi rencana kerja, target kuantitas, kualitas, waktu, serta biaya yang disepakati sebagai landasan penilaian tahunan pegawai."
+                    },
+                    {
+                        question: "Rekrutmen ASN yang baik dilakukan melalui…",
+                        options: [
+                            "Proses seleksi terbuka dan transparan",
+                            "Penunjukan langsung",
+                            "Rekomendasi kelompok tertentu",
+                            "Hubungan keluarga"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Penyaringan terbuka berbasis komputer (CAT) menepis adanya korupsi, kolusi, dan nepotisme, memastikan talenta-talenta terbaik yang diterima mengabdi."
+                    },
+                    {
+                        question: "Pengembangan kompetensi ASN meliputi…",
+                        options: [
+                            "Pendidikan dan pelatihan",
+                            "Penugasan belajar",
+                            "Coaching dan mentoring",
+                            "Semua benar"
+                        ],
+                        answerIndex: 3, // d
+                        explanation: "Seluruh opsi (pendidikan formal, pelatihan teknis, coaching, mentoring, magang) tergolong metode pengembangan kompetensi untuk mewujudkan pilar Smart ASN."
+                    },
+                    {
+                        question: "Mutasi dan promosi dalam manajemen ASN dilakukan berdasarkan…",
+                        options: [
+                            "Sistem merit",
+                            "Pertimbangan politik",
+                            "Senioritas saja",
+                            "Pertemanan"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Aspek pertimbangan utama mutasi/promosi berpatokan pada pencapaian SKP, integritas moral, serta kecocokan kompetensi jabatan baru (sistem merit)."
+                    },
+                    {
+                        question: "Penilaian kinerja ASN harus…",
+                        options: [
+                            "Obyektif, terukur, dan transparan",
+                            "Subyektif dan fleksibel",
+                            "Berdasarkan opini",
+                            "Berdasarkan kedekatan personal"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Sistem penilaian terukur dan transparan mereduksi subjektivitas atasan, sehingga memacu keadilan iklim kerja profesional."
+                    },
+                    {
+                        question: "Dalam manajemen ASN, disiplin pegawai diatur melalui…",
+                        options: [
+                            "PP No. 94 Tahun 2021",
+                            "UU No. 11 Tahun 2008",
+                            "PP No. 45 Tahun 2013",
+                            "UU No. 23 Tahun 2014"
+                        ],
+                        answerIndex: 0, // a
+                        explanation: "Peraturan Pemerintah Nomor 94 Tahun 2021 secara rigid mengatur mengenai kewajiban, larangan, jenis hukuman disiplin, serta tata cara penegakan kedisiplinan PNS."
+                    }
+                ]
+            }
+        };
+
+        // State Management
+        let currentQuizKey = null;
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answersHistory = []; 
+        let startTime = null;
+        let endTime = null;
+        let timerInterval = null;
+        let timerSecondsLeft = 20;
+        const DEFAULT_TIMER_LIMIT = 20;
+
+        // UI Selectors
+        const screenHome = document.getElementById("screen-home");
+        const screenQuiz = document.getElementById("screen-quiz");
+        const screenResult = document.getElementById("screen-result");
+        const screenCertificate = document.getElementById("screen-certificate");
+        const modalQuit = document.getElementById("modal-quit");
+
+        // Initialization
+        window.onload = function() {
+            renderHistory();
+            initDatabaseAndAuth();
+        };
+
+        // Auth and Leaderboard Synchronization (FOLLOWS RULE 1, 2, 3)
+        async function initDatabaseAndAuth() {
+            if (!firebaseEnabled) {
+                simulateMockLeaderboard();
+                return;
+            }
+
+            try {
+                // Rule 3: Auth first
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.error("Auth Failure:", err);
+                simulateMockLeaderboard();
+                return;
+            }
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // Rule 1: Strict paths for collections and Rule 2: Fetch all and sort in memory
+                    const path = collection(db, 'artifacts', appId, 'public', 'data', 'leaderboard');
+                    onSnapshot(path, (snapshot) => {
+                        const rawScores = [];
+                        snapshot.forEach(doc => {
+                            rawScores.push({ id: doc.id, ...doc.data() });
+                        });
+                        
+                        // Rule 2 sorting in JavaScript Memory
+                        const cleanScores = rawScores.filter(s => s.name && typeof s.score === 'number');
+                        cleanScores.sort((a, b) => {
+                            if (b.score !== a.score) {
+                                return b.score - a.score;
+                            }
+                            return (a.timestamp || 0) - (b.timestamp || 0);
+                        });
+
+                        const top10 = cleanScores.slice(0, 10);
+                        displayLeaderboardUI(top10);
+                    }, (err) => {
+                        console.error("Leaderboard Realtime Error:", err);
+                        simulateMockLeaderboard();
+                    });
+                }
+            });
+        }
+
+        // Display scores inside Leaderboard UI
+        function displayLeaderboardUI(scoresList) {
+            const listContainer = document.getElementById("global-list");
+            const loadingIndicator = document.getElementById("global-loading");
+            const emptyState = document.getElementById("global-empty");
+
+            loadingIndicator.classList.add("hidden");
+            listContainer.innerHTML = '';
+
+            if (scoresList.length === 0) {
+                emptyState.classList.remove("hidden");
+                return;
+            }
+
+            emptyState.classList.add("hidden");
+
+            scoresList.forEach((entry, idx) => {
+                const el = document.createElement("div");
+                
+                // Rank styling / Medal decoration
+                let badgeClass = "bg-slate-100 text-slate-600";
+                let rankLabel = idx + 1;
+                let bgBorder = "border-slate-100 bg-slate-50/50";
+
+                if (idx === 0) {
+                    badgeClass = "bg-amber-100 text-amber-800 ring-2 ring-amber-400";
+                    rankLabel = "🥇";
+                    bgBorder = "border-amber-100 bg-amber-50/30";
+                } else if (idx === 1) {
+                    badgeClass = "bg-slate-200 text-slate-800 ring-2 ring-slate-400";
+                    rankLabel = "🥈";
+                    bgBorder = "border-slate-200 bg-slate-100/30";
+                } else if (idx === 2) {
+                    badgeClass = "bg-amber-50 text-amber-900 ring-2 ring-amber-300";
+                    rankLabel = "🥉";
+                    bgBorder = "border-amber-100 bg-amber-50/10";
+                }
+
+                el.className = `flex justify-between items-center border ${bgBorder} p-3 rounded-2xl text-xs transition-all hover:scale-[1.01]`;
+                el.innerHTML = `
+                    <div class="flex items-center space-x-3 min-w-0">
+                        <span class="w-7 h-7 rounded-full flex items-center justify-center font-bold ${badgeClass}">
+                            ${rankLabel}
+                        </span>
+                        <div class="space-y-0.5 truncate">
+                            <span class="font-extrabold text-slate-800 block truncate">${escapeHTML(entry.name)}</span>
+                            <span class="text-[9px] text-slate-400 block truncate">${escapeHTML(entry.category || 'Evaluasi ASN')} • ${entry.time || '0s'}</span>
+                        </div>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <span class="font-black text-sm text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-xl">
+                            ${entry.score} pts
+                        </span>
+                    </div>
+                `;
+                listContainer.appendChild(el);
+            });
+        }
+
+        // Local Storage Simulation when cloud isn't connected
+        function simulateMockLeaderboard() {
+            let mockData = JSON.parse(localStorage.getItem('asn_quiz_mock_leaderboard')) || [
+                { name: "Andi Pratama", score: 100, category: "Kuis Smart ASN", time: "42 Detik", timestamp: Date.now() - 36000000 },
+                { name: "Dewi Lestari", score: 90, category: "Kuis Manajemen ASN", time: "55 Detik", timestamp: Date.now() - 18000000 },
+                { name: "Budi Santoso", score: 80, category: "Kuis Campuran", time: "1m 12s", timestamp: Date.now() - 9000000 }
+            ];
+            
+            mockData.sort((a, b) => b.score - a.score);
+            localStorage.setItem('asn_quiz_mock_leaderboard', JSON.stringify(mockData));
+            displayLeaderboardUI(mockData);
+        }
+
+        // Submit Score callback (FOLLOWS RULE 3 check first)
+        async function submitGlobalScore() {
+            const nicknameInput = document.getElementById("leaderboard-nickname-input");
+            const nickname = nicknameInput.value.trim();
+            const btn = document.getElementById("submit-leaderboard-btn");
+
+            if (!nickname) {
+                showToast("Nama panggilan wajib diisi!", "error");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = `Mengirim...`;
+
+            const scoreObj = {
+                name: nickname,
+                score: score,
+                category: QUIZ_DATA[currentQuizKey].title,
+                time: document.getElementById("result-stat-time").textContent,
+                timestamp: Date.now()
+            };
+
+            if (firebaseEnabled && auth.currentUser) {
+                try {
+                    // Rule 1: Strict collection path
+                    const path = collection(db, 'artifacts', appId, 'public', 'data', 'leaderboard');
+                    await addDoc(path, scoreObj);
+                    showToast("Skor Anda berhasil dipajang di Peringkat Global!", "success");
+                    document.getElementById("leaderboard-submission-card").classList.add("hidden");
+                } catch (err) {
+                    console.error("Firestore Upload Error:", err);
+                    showToast("Gagal menyimpan ke cloud. Menyimpan ke simulasi lokal.", "error");
+                    localLeaderboardFallback(scoreObj);
+                }
+            } else {
+                localLeaderboardFallback(scoreObj);
+            }
+        }
+
+        function localLeaderboardFallback(scoreObj) {
+            let mockData = JSON.parse(localStorage.getItem('asn_quiz_mock_leaderboard')) || [];
+            mockData.push(scoreObj);
+            mockData.sort((a, b) => b.score - a.score);
+            localStorage.setItem('asn_quiz_mock_leaderboard', JSON.stringify(mockData.slice(0, 10)));
+            displayLeaderboardUI(mockData.slice(0, 10));
+            showToast("Skor terdaftar di simulasi peringkat lokal!", "success");
+            document.getElementById("leaderboard-submission-card").classList.add("hidden");
+        }
+
+        // Screen Navigation Utility
+        function changeScreen(screenName) {
+            screenHome.classList.add("hidden");
+            screenQuiz.classList.add("hidden");
+            screenResult.classList.add("hidden");
+            screenCertificate.classList.add("hidden");
+
+            if (screenName === 'home') {
+                screenHome.classList.remove("hidden");
+                renderHistory();
+            } else if (screenName === 'quiz') {
+                screenQuiz.classList.remove("hidden");
+            } else if (screenName === 'result') {
+                screenResult.classList.remove("hidden");
+                document.getElementById("leaderboard-submission-card").classList.remove("hidden");
+                document.getElementById("leaderboard-nickname-input").value = '';
+                document.getElementById("submit-leaderboard-btn").disabled = false;
+                document.getElementById("submit-leaderboard-btn").innerHTML = `Kirim Skor`;
+            } else if (screenName === 'certificate') {
+                screenCertificate.classList.remove("hidden");
+            }
+        }
+
+        // Home Sidebar Tab Toggle
+        function switchHomeTab(tabName) {
+            const btnGlobal = document.getElementById("tab-global");
+            const btnLocal = document.getElementById("tab-local");
+            const panelGlobal = document.getElementById("panel-global");
+            const panelLocal = document.getElementById("panel-local");
+
+            if (tabName === 'global') {
+                btnGlobal.className = "flex-1 pb-3 text-center border-b-2 border-indigo-600 font-bold text-sm text-indigo-600 transition-all";
+                btnLocal.className = "flex-1 pb-3 text-center border-b-2 border-transparent font-medium text-sm text-slate-400 hover:text-slate-600 transition-all";
+                panelGlobal.classList.remove("hidden");
+                panelLocal.classList.add("hidden");
+            } else {
+                btnLocal.className = "flex-1 pb-3 text-center border-b-2 border-indigo-600 font-bold text-sm text-indigo-600 transition-all";
+                btnGlobal.className = "flex-1 pb-3 text-center border-b-2 border-transparent font-medium text-sm text-slate-400 hover:text-slate-600 transition-all";
+                panelLocal.classList.remove("hidden");
+                panelGlobal.classList.add("hidden");
+            }
+        }
+
+        // Helper to escape HTML tags
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+            );
+        }
+
+        // Alert Toast Implementation
+        function showToast(message, type = "info") {
+            const toast = document.getElementById("toast-notif");
+            const msgEl = document.getElementById("toast-msg");
+            const iconEl = document.getElementById("toast-icon");
+
+            msgEl.textContent = message;
+            
+            if (type === "success") {
+                iconEl.className = "bg-emerald-500 text-slate-950 p-1.5 rounded-lg";
+                iconEl.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+            } else if (type === "error") {
+                iconEl.className = "bg-red-500 text-white p-1.5 rounded-lg";
+                iconEl.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+            } else {
+                iconEl.className = "bg-amber-500 text-slate-950 p-1.5 rounded-lg";
+                iconEl.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+            }
+
+            // Slide in
+            toast.className = "fixed bottom-6 right-6 z-50 transform translate-y-0 opacity-100 transition-all duration-300 max-w-sm w-full bg-slate-900 text-white p-4 rounded-2xl shadow-xl flex items-center space-x-3";
+            
+            setTimeout(() => {
+                // Slide out
+                toast.className = "fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm w-full bg-slate-900 text-white p-4 rounded-2xl shadow-xl flex items-center space-x-3";
+            }, 3000);
+        }
+
+        // Quiz Selection & Initiation
+        function selectQuiz(quizKey) {
+            currentQuizKey = quizKey;
+            const quiz = QUIZ_DATA[quizKey];
+            if (!quiz) return;
+
+            // Deep clone questions
+            currentQuestions = JSON.parse(JSON.stringify(quiz.questions));
+            currentQuestionIndex = 0;
+            score = 0;
+            answersHistory = [];
+            startTime = new Date();
+
+            // Set up UI
+            const badge = document.getElementById("quiz-title-badge");
+            badge.textContent = quiz.title;
+            badge.className = `text-xs font-bold px-2.5 py-1 rounded-full ${
+                quizKey === 'campuran' ? 'bg-indigo-100 text-indigo-800' :
+                quizKey === 'smart_asn' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+            }`;
+
+            // Configure timer visibility
+            const isTimerEnabled = document.getElementById("toggle-timer").checked;
+            const timerContainer = document.getElementById("quiz-timer-container");
+            const timerLineContainer = document.getElementById("quiz-timer-line-container");
+
+            if (isTimerEnabled) {
+                timerContainer.classList.remove("invisible");
+                timerLineContainer.classList.remove("invisible");
+            } else {
+                timerContainer.classList.add("invisible");
+                timerLineContainer.classList.add("invisible");
+            }
+
+            changeScreen('quiz');
+            loadQuestion();
+        }
+
+        // Restart Current Quiz
+        function restartCurrentQuiz() {
+            if (currentQuizKey) {
+                selectQuiz(currentQuizKey);
+            }
+        }
+
+        // Load specific question to view
+        function loadQuestion() {
+            // Reset timers
+            clearInterval(timerInterval);
+            
+            const q = currentQuestions[currentQuestionIndex];
+            const numEl = document.getElementById("quiz-current-num");
+            const questionText = document.getElementById("question-text");
+            const optionsContainer = document.getElementById("options-container");
+            const progressFill = document.getElementById("quiz-progress-fill");
+            const scoreText = document.getElementById("quiz-current-score");
+            const nextBtn = document.getElementById("next-btn");
+
+            // Update stats
+            numEl.textContent = `Pertanyaan ${currentQuestionIndex + 1} dari ${currentQuestions.length}`;
+            questionText.textContent = q.question;
+            scoreText.textContent = score.toString().padStart(2, '0');
+            nextBtn.disabled = true;
+
+            // Update Progress Bar
+            const percentage = ((currentQuestionIndex) / currentQuestions.length) * 100;
+            progressFill.style.width = `${percentage}%`;
+
+            // Reset options layout
+            optionsContainer.innerHTML = '';
+            
+            // Populate multiple choice buttons
+            q.options.forEach((opt, idx) => {
+                const charCode = String.fromCharCode(97 + idx); // a, b, c, d
+                const btn = document.createElement("button");
+                btn.className = "w-full text-left bg-white border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/20 active:bg-indigo-50/50 p-4 rounded-2xl shadow-sm transition-all duration-200 flex items-center space-x-4 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 group";
+                btn.onclick = () => selectOption(idx, btn);
+                btn.innerHTML = `
+                    <div class="flex-shrink-0 w-8 h-8 rounded-xl bg-slate-100 group-hover:bg-indigo-100 text-slate-600 group-hover:text-indigo-600 flex items-center justify-center font-bold text-sm uppercase transition-colors">
+                        ${charCode}
+                    </div>
+                    <span class="text-slate-700 font-medium text-sm sm:text-base">${opt}</span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+
+            // Start Timer if enabled
+            const isTimerEnabled = document.getElementById("toggle-timer").checked;
+            if (isTimerEnabled) {
+                startTimer();
+            }
+        }
+
+        // Timer controller
+        function startTimer() {
+            timerSecondsLeft = DEFAULT_TIMER_LIMIT;
+            const timerTxt = document.getElementById("quiz-timer-txt");
+            const timerLine = document.getElementById("quiz-timer-line");
+            
+            timerTxt.textContent = `${timerSecondsLeft}s`;
+            timerLine.style.width = "100%";
+            timerLine.className = "timer-bar bg-amber-400 h-full w-full";
+
+            timerInterval = setInterval(() => {
+                timerSecondsLeft--;
+                timerTxt.textContent = `${timerSecondsLeft}s`;
+                
+                // Calculate percentage
+                const ratio = (timerSecondsLeft / DEFAULT_TIMER_LIMIT) * 100;
+                timerLine.style.width = `${ratio}%`;
+
+                if (timerSecondsLeft <= 5) {
+                    timerLine.className = "timer-bar bg-red-500 h-full w-full";
+                }
+
+                if (timerSecondsLeft <= 0) {
+                    clearInterval(timerInterval);
+                    handleTimeOut();
+                }
+            }, 1000);
+        }
+
+        // Handle Time out scenario
+        function handleTimeOut() {
+            showToast("Waktu pengerjaan habis untuk soal ini!", "error");
+            // Highlight correct answer and lock buttons
+            lockAllOptionsAndShowCorrect(-1); 
+        }
+
+        // Option selection trigger
+        function selectOption(selectedIndex, selectedBtn) {
+            clearInterval(timerInterval);
+            lockAllOptionsAndShowCorrect(selectedIndex, selectedBtn);
+        }
+
+        // Lock choosing and display evaluation instantly
+        function lockAllOptionsAndShowCorrect(selectedIndex, selectedBtn) {
+            const q = currentQuestions[currentQuestionIndex];
+            const correctIndex = q.answerIndex;
+            const optionsContainer = document.getElementById("options-container");
+            const btns = optionsContainer.getElementsByTagName("button");
+            const animationsEnabled = document.getElementById("toggle-animations").checked;
+
+            const nextBtn = document.getElementById("next-btn");
+            nextBtn.disabled = false;
+
+            // Log performance
+            const isCorrect = selectedIndex === correctIndex;
+            if (isCorrect) {
+                score += 10;
+            }
+
+            answersHistory.push({
+                questionIndex: currentQuestionIndex,
+                questionText: q.question,
+                options: q.options,
+                selectedIndex: selectedIndex,
+                correctIndex: correctIndex,
+                explanation: q.explanation,
+                isCorrect: isCorrect
+            });
+
+            // Color-code the options
+            for (let i = 0; i < btns.length; i++) {
+                const btn = btns[i];
+                btn.disabled = true; // Lock choice
+                btn.className = "w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center space-x-4 cursor-default";
+                
+                const badge = btn.querySelector("div");
+                
+                if (i === correctIndex) {
+                    // Correct answer highlighted green
+                    btn.classList.add("bg-emerald-50", "border-emerald-300", "text-emerald-900");
+                    badge.className = "flex-shrink-0 w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm uppercase";
+                    badge.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>`;
+                    
+                    if (animationsEnabled && i === selectedIndex) {
+                        btn.classList.add("scale-[1.02]", "ring-4", "ring-emerald-500/20");
+                    }
+                } else if (i === selectedIndex && selectedIndex !== correctIndex) {
+                    // Incorrect selected option highlighted red
+                    btn.classList.add("bg-red-50", "border-red-300", "text-red-900");
+                    badge.className = "flex-shrink-0 w-8 h-8 rounded-xl bg-red-500 text-white flex items-center justify-center font-bold text-sm uppercase";
+                    badge.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                    
+                    if (animationsEnabled) {
+                        btn.classList.add("scale-[1.02]", "ring-4", "ring-red-500/20", "animate-shake");
+                    }
+                } else {
+                    // Muted neutral options
+                    btn.classList.add("bg-slate-50", "border-slate-100", "opacity-60");
+                    badge.className = "flex-shrink-0 w-8 h-8 rounded-xl bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-xs uppercase";
+                }
+            }
+        }
+
+        // Proceed to next question / Finish
+        function handleNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentQuestions.length) {
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        // Process End Results
+        function finishQuiz() {
+            endTime = new Date();
+            const timeTakenSec = Math.round((endTime - startTime) / 1000);
+            
+            // Calculate score details
+            const correctAnswers = answersHistory.filter(a => a.isCorrect).length;
+            const finalScore = score;
+
+            // Render on Screen
+            document.getElementById("result-score-txt").textContent = finalScore;
+            document.getElementById("result-stat-correct").textContent = `${correctAnswers}/${currentQuestions.length}`;
+            
+            // Format time taken
+            let timeStr = `${timeTakenSec} Detik`;
+            if (timeTakenSec >= 60) {
+                const mins = Math.floor(timeTakenSec / 60);
+                const secs = timeTakenSec % 60;
+                timeStr = `${mins}m ${secs}s`;
+            }
+            document.getElementById("result-stat-time").textContent = timeStr;
+
+            // Radial progress svg calculation
+            const circle = document.getElementById("result-svg-circle");
+            circle.setAttribute("stroke-dasharray", `${finalScore}, 100`);
+
+            // Performance tier text & decoration
+            const titleEl = document.getElementById("result-status-title");
+            const descEl = document.getElementById("result-status-desc");
+            const certGenCard = document.getElementById("certificate-generator-card");
+
+            if (finalScore >= 90) {
+                titleEl.textContent = "Luar Biasa! Anda Smart ASN Unggul 🌟";
+                descEl.textContent = "Penguasaan materi Anda sangat istimewa! Anda sangat siap menghadapi tantangan birokrasi masa kini.";
+                certGenCard.classList.remove("hidden");
+            } else if (finalScore >= 80) {
+                titleEl.textContent = "Hebat! ASN Kompeten & Profesional 👍";
+                descEl.textContent = "Sangat bagus! Pemahaman Anda kuat dan memenuhi standar kualifikasi kepemimpinan yang objektif.";
+                certGenCard.classList.remove("hidden");
+            } else if (finalScore >= 60) {
+                titleEl.textContent = "Cukup Baik! Terus Tingkatkan 📚";
+                descEl.textContent = "Ada beberapa detail regulasi yang perlu dipoles. Sedikit belajar lagi akan menyempurnakan kemampuan Anda.";
+                certGenCard.classList.add("hidden");
+            } else {
+                titleEl.textContent = "Butuh Belajar Lagi! Semangat 💪";
+                descEl.textContent = "Jangan berkecil hati. Manajemen ASN & literasi digital butuh latihan. Silakan ulangi kuis ini untuk pemantapan.";
+                certGenCard.classList.add("hidden");
+            }
+
+            // Save history data inside localstorage
+            saveScoreToHistory(QUIZ_DATA[currentQuizKey].title, finalScore, correctAnswers, timeStr);
+
+            // Populate Review list
+            renderQuizReview();
+
+            // Direct view
+            changeScreen('result');
+            showToast("Nilai Anda telah dihitung!", "success");
+        }
+
+        // Print Detail Review cards
+        function renderQuizReview() {
+            const reviewContainer = document.getElementById("review-list");
+            reviewContainer.innerHTML = '';
+
+            answersHistory.forEach((item, idx) => {
+                const card = document.createElement("div");
+                card.className = `p-5 rounded-2xl border ${
+                    item.isCorrect ? 'bg-emerald-50/25 border-emerald-100' : 'bg-red-50/25 border-red-100'
+                } space-y-3`;
+
+                const charChoice = item.selectedIndex >= 0 ? String.fromCharCode(97 + item.selectedIndex) : 'Tidak Menjawab';
+                const charCorrect = String.fromCharCode(97 + item.correctIndex);
+
+                card.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 rounded-full ${
+                            item.isCorrect ? 'bg-emerald-500' : 'bg-red-500'
+                        } text-white flex-shrink-0 text-xs font-bold flex items-center justify-center mt-0.5">
+                            ${idx + 1}
+                        </span>
+                        <div class="space-y-1 flex-grow">
+                            <h5 class="font-bold text-slate-800 text-sm leading-relaxed">${item.questionText}</h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs">
+                                <div class="p-2.5 bg-white border rounded-xl flex items-center justify-between">
+                                    <span class="text-slate-400">Jawaban Anda:</span>
+                                    <span class="font-bold uppercase ${item.isCorrect ? 'text-emerald-600' : 'text-red-500'}">
+                                        (${charChoice}) ${item.selectedIndex >= 0 ? item.options[item.selectedIndex] : '-'}
+                                    </span>
+                                </div>
+                                <div class="p-2.5 bg-white border rounded-xl flex items-center justify-between">
+                                    <span class="text-slate-400">Jawaban Benar:</span>
+                                    <span class="font-bold uppercase text-emerald-600">
+                                        (${charCorrect}) ${item.options[item.correctIndex]}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mt-4 bg-white/70 border border-slate-100 p-3 rounded-xl">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 block">Pembahasan Analisis:</span>
+                                <p class="text-xs text-slate-600 mt-1 leading-relaxed italic">${item.explanation}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                reviewContainer.appendChild(card);
+            });
+        }
+
+        // Local Storage Scores Manager
+        function saveScoreToHistory(title, finalScore, correctAnswers, timeTaken) {
+            const history = JSON.parse(localStorage.getItem('asn_quiz_history')) || [];
+            history.unshift({
+                id: Date.now(),
+                title: title,
+                score: finalScore,
+                correct: correctAnswers,
+                time: timeTaken,
+                date: new Date().toLocaleDateString('id-ID', {day: 'numeric', month: 'short', hour: '2-digit', minute:'2-digit'})
+            });
+            localStorage.setItem('asn_quiz_history', JSON.stringify(history.slice(0, 10))); 
+        }
+
+        // Print History List in Dashboard
+        function renderHistory() {
+            const history = JSON.parse(localStorage.getItem('asn_quiz_history')) || [];
+            const placeholder = document.getElementById("stats-placeholder");
+            const list = document.getElementById("stats-list");
+            const resetBtn = document.getElementById("reset-stats-btn-container");
+
+            if (history.length === 0) {
+                placeholder.classList.remove("hidden");
+                list.classList.add("hidden");
+                resetBtn.classList.add("hidden");
+            } else {
+                placeholder.classList.add("hidden");
+                list.classList.remove("hidden");
+                resetBtn.classList.remove("hidden");
+                list.innerHTML = '';
+
+                history.forEach(item => {
+                    const el = document.createElement("div");
+                    el.className = "flex justify-between items-center bg-slate-50 border border-slate-200 p-3 rounded-xl text-xs hover:bg-indigo-50/10 transition-colors";
+                    el.innerHTML = `
+                        <div class="space-y-1">
+                            <span class="font-bold text-slate-700 block truncate max-w-[180px] sm:max-w-xs">${item.title}</span>
+                            <span class="text-[10px] text-slate-400 block">${item.date} • Durasi: ${item.time}</span>
+                        </div>
+                        <div class="text-right flex items-center space-x-2">
+                            <span class="text-[10px] text-slate-400">${item.correct} Benar</span>
+                            <span class="font-extrabold text-sm px-2 py-1 rounded-lg ${
+                                item.score >= 80 ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'
+                            }">
+                                ${item.score}
+                            </span>
+                        </div>
+                    `;
+                    list.appendChild(el);
+                });
+            }
+        }
+
+        // Clear statistics
+        function clearHistory() {
+            localStorage.removeItem('asn_quiz_history');
+            renderHistory();
+            showToast("Semua riwayat skor Anda berhasil dihapus.", "success");
+        }
+
+        // QUIT CONFIRMATION MODAL ACTIONS
+        function showQuitConfirmation() {
+            modalQuit.classList.remove("hidden");
+        }
+        function closeQuitModal() {
+            modalQuit.classList.add("hidden");
+        }
+        function quitQuiz() {
+            clearInterval(timerInterval);
+            closeQuitModal();
+            changeScreen('home');
+            showToast("Kuis dibatalkan secara manual.", "info");
+        }
+
+        // CERTIFICATE ACTIONS
+        function generateCertificate() {
+            const inputEl = document.getElementById("cert-user-name");
+            const name = inputEl.value.trim();
+
+            if (!name) {
+                showToast("Silakan isi nama lengkap Anda untuk sertifikat!", "error");
+                return;
+            }
+
+            // Set Certificate Data
+            document.getElementById("cert-output-name").textContent = name;
+            document.getElementById("cert-output-category").textContent = QUIZ_DATA[currentQuizKey].title;
+            document.getElementById("cert-output-score").textContent = `Skor Kompetensi: ${score}/100 (${answersHistory.filter(a => a.isCorrect).length} Benar)`;
+
+            // Switch to certificate screen
+            changeScreen('certificate');
+            showToast("Sertifikat digital berhasil diterbitkan!", "success");
+        }
+
+        function closeCertificateView() {
+            changeScreen('result');
+        }
+
+        // Bind Module Functions to Window for HTML attributes compatibility
+        window.selectQuiz = selectQuiz;
+        window.restartCurrentQuiz = restartCurrentQuiz;
+        window.handleNextQuestion = handleNextQuestion;
+        window.generateCertificate = generateCertificate;
+        window.closeCertificateView = closeCertificateView;
+        window.clearHistory = clearHistory;
+        window.closeQuitModal = closeQuitModal;
+        window.quitQuiz = quitQuiz;
+        window.showQuitConfirmation = showQuitConfirmation;
+        window.changeScreen = changeScreen;
+        window.switchHomeTab = switchHomeTab;
+        window.submitGlobalScore = submitGlobalScore;
+    </script>
+</body>
+</html>
